@@ -1,4 +1,5 @@
 import { View, StyleSheet, Text } from 'react-native';
+import { colors } from '../../colors/colors';
 
 export default function Balance({ saldo, gastos }) {
     return (
@@ -23,7 +24,7 @@ export default function Balance({ saldo, gastos }) {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fff',
+        backgroundColor: colors.white,
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingStart: 18,
@@ -41,22 +42,22 @@ const styles = StyleSheet.create({
     },
     itemTitle: {
         fontSize: 20,
-        color: '#dadada',
+        color: colors.fourthColor,
     },
     content: {
         flexDirection: 'row',
         alignItems: 'center'
     },
     currencySymbol: {
-        color: '#dadada',
+        color: colors.fourthColor,
         marginRight: 0,
     },
     balance: {
         fontSize: 22,
-        color: '#2ecc71'
+        color: colors.earned,
     },
     expenses: {
         fontSize: 22,
-        color: '#e74c3c'
+        color: colors.lost,
     }
 })

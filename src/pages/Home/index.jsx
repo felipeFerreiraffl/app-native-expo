@@ -3,6 +3,7 @@ import Header from '../../components/Header';
 import Balance from '../../components/Balance';
 import Movements from '../../components/Movements';
 import Actions from '../../components/Actions';
+import { colors } from '../../colors/colors';
 
 const list = [
     {
@@ -48,10 +49,11 @@ export default function Home() {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#fafafa',
+        flex: 1,
+        backgroundColor: colors.gray,
     },
     title: {
-        fontSize: 18,
+        fontSize: 21,
         fontWeight: 'bold',
         margin: 14,
     },

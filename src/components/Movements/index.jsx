@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
+import { colors } from './../../colors/colors';
 
 export default function Movements({ data }) {
     const [showValue, setShowValue] = useState(false);
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
         flex: 1,
         marginBottom: 24,
         borderBottomWidth: 0.5,
-        borderBottomColor: '#dadada'
+        borderBottomColor: colors.fourthColor
     },
     content: {
         flexDirection: 'row',
@@ -42,24 +43,24 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     date: {
-        color: '#dadada',
+        color: colors.fourthColor,
         fontWeight: 'bold',
     },
     value: {
         fontSize: 16,
-        color: '#2ecc71',
+        color: colors.earned,
         fontWeight: 'bold'
     },
     expenses: {
         fontSize: 16,
-        color: '#e74c3c',
+        color: colors.lost,
         fontWeight: 'bold'
     },
     skeleton: {
         marginTop: 8,
         width: 80,
         height: 10,
-        backgroundColor: '#dadada',
+        backgroundColor: colors.fourthColor,
         borderRadius: 8,
     }
 })

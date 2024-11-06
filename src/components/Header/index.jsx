@@ -1,41 +1,35 @@
 import { View, StyleSheet, StatusBar, Text, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-import { MotiView, MotiText } from 'moti';
+import { colors } from './../../colors/colors';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
 export default function Header({ name }) {
+
+
     return (
         <View style={styles.container}>
-            <MotiView
+            <View
                 style={styles.content}
-                from={{
-                    translateY: -150,
-                    opacity: 0
-                }}
-                animate={{
-                    translateY: 0,
-                    opacity: 1
-                }}
             >
                 <Text style={styles.username}>{name}</Text>
 
                 <TouchableOpacity activeOpacity={0.9} style={styles.userButton}>
-                    <Feather name='user' size={27} color={'#fff'} />
+                    <Feather name='user' size={27} color={colors.secondColor} />
                 </TouchableOpacity>
 
-            </MotiView>
+            </View>
         </View>
     )
 }
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: 'purple',
+        backgroundColor: colors.mainColor,
         paddingTop: statusBarHeight,
         flexDirection: 'row',
-        paddingStart: 16,
-        paddingEnd: 16,
+        paddingStart: 20,
+        paddingEnd: 20,
         paddingBottom: 44,
     },
     content: {
@@ -45,8 +39,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
     },
     username: {
-        fontSize: 18,
-        color: '#fff',
+        fontSize: 20,
+        color: colors.white,
         fontWeight: 'bold',
     },
     userButton: {

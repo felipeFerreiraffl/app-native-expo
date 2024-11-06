@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet, TouchableOpacity, ScrollView, tex } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'
+import { colors } from './../../colors/colors';
 
 export default function Actions() {
     return (
@@ -61,7 +62,7 @@ const styles = StyleSheet.create({
         marginRight: 32,
     },
     areaButton: {
-        backgroundColor: '#ecf0f1',
+        backgroundColor: colors.fourthColor,
         height: 60,
         width: 60,
         borderRadius: 30,
