@@ -1,6 +1,8 @@
 import { View, StyleSheet, StatusBar, Text, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { colors } from './../../colors/colors';
+import { fonts } from './../../fonts/fonts';
+import { LinearGradient } from 'expo-linear-gradient';
 
 const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 : 64;
 
@@ -8,7 +10,12 @@ export default function Header({ name }) {
 
 
     return (
-        <View style={styles.container}>
+        <LinearGradient 
+            style={styles.container}
+            colors={[colors.mainColor, colors.thirdColor]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 1 }}
+        >
             <View
                 style={styles.content}
             >
@@ -19,7 +26,7 @@ export default function Header({ name }) {
                 </TouchableOpacity>
 
             </View>
-        </View>
+        </LinearGradient>
     )
 }
 
@@ -41,7 +48,7 @@ const styles = StyleSheet.create({
     username: {
         fontSize: 20,
         color: colors.white,
-        fontWeight: 'bold',
+        fontFamily: fonts.boldFont,
     },
     userButton: {
         width: 44,

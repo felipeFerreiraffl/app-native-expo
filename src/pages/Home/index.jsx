@@ -1,9 +1,11 @@
-import { View, Text, StyleSheet, FlatList } from 'react-native';
+import { View, Text, StyleSheet, FlatList, ScrollView } from 'react-native';
 import Header from '../../components/Header';
 import Balance from '../../components/Balance';
 import Movements from '../../components/Movements';
 import Actions from '../../components/Actions';
 import { colors } from '../../colors/colors';
+import { fonts } from '../../fonts/fonts';
+import BankCard from '../../components/BankCard';
 
 const list = [
     {
@@ -36,13 +38,15 @@ export default function Home() {
             <Balance saldo={'2000,00'} gastos={'-300,00'} />
             <Actions />
             <Text style={styles.title}>Últimas movimentações</Text>
-            <FlatList 
+            <FlatList
                 style={styles.list}
                 data={list}
                 keyExtractor={(item) => String(item.id)}
                 showsVerticalScrollIndicator={false}
                 renderItem={({ item }) => <Movements data={item} />}
             />
+            <Text style={styles.title}>Cartões</Text>
+            <BankCard title={'Cartão Felipe'} number={'**** 0198'} type={'Débito'} />
         </View>
     )
 }
@@ -54,11 +58,11 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 21,
-        fontWeight: 'bold',
+        fontFamily: fonts.boldFont,
         margin: 14,
     },
     list: {
         marginStart: 14,
         marginEnd: 14,
-    }
+    },
 })

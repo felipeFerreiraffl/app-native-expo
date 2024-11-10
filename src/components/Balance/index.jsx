@@ -1,5 +1,6 @@
 import { View, StyleSheet, Text } from 'react-native';
 import { colors } from '../../colors/colors';
+import { fonts } from '../../fonts/fonts';
 
 export default function Balance({ saldo, gastos }) {
     return (
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
     itemTitle: {
         fontSize: 20,
         color: colors.fourthColor,
+        fontFamily: fonts.regularFont,
     },
     content: {
         flexDirection: 'row',
@@ -55,9 +57,11 @@ const styles = StyleSheet.create({
     balance: {
         fontSize: 22,
         color: colors.earned,
+        fontFamily: fonts.boldFont,
     },
     expenses: {
         fontSize: 22,
         color: colors.lost,
+        fontFamily: fonts.boldFont,
     }
 })

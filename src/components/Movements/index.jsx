@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native';
 import { colors } from './../../colors/colors';
+import { fonts } from '../../fonts/fonts';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default function Movements({ data }) {
     const [showValue, setShowValue] = useState(false);
@@ -17,8 +19,13 @@ export default function Movements({ data }) {
                         {data.type === 1 ? `R$ ${data.value}` : `R$ -${data.value}`}
                     </Text>
                 ) : (
-                    <View style={styles.skeleton}>
-                    </View>
+                    <LinearGradient 
+                        style={styles.skeleton}
+                        colors={[colors.thirdColor, colors.fourthColor]}
+                        start={{ x: 0, y: 0 }}
+                        end={{ x: 1, y: 1 }}
+                    >
+                    </LinearGradient>
                 )}
             </View>
         </TouchableOpacity>
@@ -40,27 +47,26 @@ const styles = StyleSheet.create({
     },
     label: {
         fontSize: 16,
-        fontWeight: 'bold'
+        fontFamily: fonts.boldFont,
     },
     date: {
         color: colors.fourthColor,
-        fontWeight: 'bold',
+        fontFamily: fonts.boldFont,
     },
     value: {
         fontSize: 16,
         color: colors.earned,
-        fontWeight: 'bold'
+        fontFamily: fonts.boldFont,
     },
     expenses: {
         fontSize: 16,
         color: colors.lost,
-        fontWeight: 'bold'
+        fontFamily: fonts.boldFont,
     },
     skeleton: {
         marginTop: 8,
         width: 80,
         height: 10,
-        backgroundColor: colors.fourthColor,
         borderRadius: 8,
     }
 })

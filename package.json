@@ -10,12 +10,13 @@
   },
   "dependencies": {
     "expo": "^51.0.38",
+    "expo-linear-gradient": "~13.0.2",
+    "expo-splash-screen": "^0.27.6",
     "expo-status-bar": "~1.12.1",
     "moti": "latest",
     "react": "18.2.0",
     "react-native": "0.74.5",
-    "react-native-reanimated": "~3.10.1",
-    "expo-linear-gradient": "~13.0.2"
+    "react-native-reanimated": "~3.10.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.0"
